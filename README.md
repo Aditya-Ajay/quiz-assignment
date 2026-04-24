@@ -2,6 +2,9 @@
 
 A flexible Laravel quiz application that supports five question types (Binary, Single Choice, Multiple Choice, Number, Text), media uploads, embedded YouTube videos, and per-type evaluation logic. Built around a **strategy + registry** pattern so adding a new question type later requires writing one class — no controller or view changes.
 
+- **Live demo:** http://13.233.75.72/quizzes
+- **Source:** https://github.com/Aditya-Ajay/quiz-assignment
+
 ## Requirements
 
 - PHP 8.2+
@@ -113,3 +116,16 @@ Estimated and actual: **~5 calendar days at evening pace (~25 hours of focused w
 | 5 | README + ARCHITECTURE + AI_USAGE, deploy | 4 |
 
 The load-bearing day was Day 1: getting the `QuestionType` abstraction right up front made the controllers and views thin, which is where most of the "extensibility" grade lives.
+
+## Deployment
+
+The live demo runs on an **AWS Lightsail LAMP (PHP 8) Bitnami** instance in `ap-south-1`, `nano_3_1` bundle (~$5/month).
+
+Apache is configured to serve `public/` as the document root with `FallbackResource /index.php` handling Laravel's route rewriting (used instead of `.htaccess` due to a Bitnami quirk where php-fpm needs a restart after DocumentRoot changes, after which either approach works — `FallbackResource` was the more portable choice). SQLite is used for persistence (the SQLite file lives on the instance disk and survives reboots).
+
+To tear down the instance:
+
+```bash
+AWS_PROFILE=grahac aws lightsail delete-instance --region ap-south-1 --instance-name quiz-assignment
+AWS_PROFILE=grahac aws lightsail delete-key-pair --region ap-south-1 --key-pair-name quiz-assignment-key
+```
