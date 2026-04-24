@@ -103,29 +103,9 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md#extending-with-a-new-type).
 - [ARCHITECTURE.md](./ARCHITECTURE.md) — design decisions, data model, extensibility story.
 - [AI_USAGE.md](./AI_USAGE.md) — prompts used, corrections applied, what was accepted vs rewritten.
 
-## Timeline
-
-Estimated and actual: **~5 calendar days at evening pace (~25 hours of focused work)**.
-
-| Day | Phase | Hours |
-|-----|-------|-------|
-| 1 | Migrations, models, relationships, `QuestionType` contract + 5 strategies | 6 |
-| 2 | Admin CRUD, per-type editor partials, media uploads | 6 |
-| 3 | Taker flow, submission, evaluation, result page | 5 |
-| 4 | Seeders, styling polish, manual QA | 4 |
-| 5 | README + ARCHITECTURE + AI_USAGE, deploy | 4 |
-
-The load-bearing day was Day 1: getting the `QuestionType` abstraction right up front made the controllers and views thin, which is where most of the "extensibility" grade lives.
 
 ## Deployment
 
-The live demo runs on an **AWS Lightsail LAMP (PHP 8) Bitnami** instance in `ap-south-1`, `nano_3_1` bundle (~$5/month).
+The live demo runs on an **AWS Lightsail LAMP (PHP 8) Bitnami** instance in `ap-south-1`, `nano_3_1`.
 
-Apache is configured to serve `public/` as the document root with `FallbackResource /index.php` handling Laravel's route rewriting (used instead of `.htaccess` due to a Bitnami quirk where php-fpm needs a restart after DocumentRoot changes, after which either approach works — `FallbackResource` was the more portable choice). SQLite is used for persistence (the SQLite file lives on the instance disk and survives reboots).
 
-To tear down the instance:
-
-```bash
-AWS_PROFILE=grahac aws lightsail delete-instance --region ap-south-1 --instance-name quiz-assignment
-AWS_PROFILE=grahac aws lightsail delete-key-pair --region ap-south-1 --key-pair-name quiz-assignment-key
-```
