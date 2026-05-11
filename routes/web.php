@@ -3,11 +3,12 @@
 use App\Http\Controllers\AttemptController;
 use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\QuizController;
+use App\Http\Controllers\QuizGenerationController;
 use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/quizzes');
 
-Route::resource('quizzes', QuizController::class);
+Route::resource('quizzes', QuizController::class); 
 
 Route::post('quizzes/{quiz}/questions', [QuestionController::class, 'store'])
     ->name('questions.store');
@@ -17,6 +18,9 @@ Route::put('questions/{question}', [QuestionController::class, 'update'])
     ->name('questions.update');
 Route::delete('questions/{question}', [QuestionController::class, 'destroy'])
     ->name('questions.destroy');
+
+Route::post('quizzes/{quiz}/generate', [QuizGenerationController::class, 'generate'])
+    ->name('quizzes.generate');
 
 Route::get('quizzes/{quiz}/take', [AttemptController::class, 'start'])
     ->name('attempts.start');

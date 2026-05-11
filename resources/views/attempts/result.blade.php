@@ -40,6 +40,24 @@
             </div>
 
             @include($type->reviewView(), ['question' => $question, 'answer' => $answer])
+
+            @if (isset($question->config['rag_enabled']) && $question->config['rag_enabled'])
+                <div class="mt-3 pt-3 border-t border-slate-100">
+                    <div class="text-xs text-slate-500 mb-1">✨ AI-generated from Wozku knowledge base</div>
+                    @if (isset($question->config['source_chunks']) && count($question->config['source_chunks']) > 0)
+                        <details class="text-xs text-slate-600">
+                            <summary class="cursor-pointer hover:text-slate-900">View sources</summary>
+                            <div class="mt-2 space-y-2">
+                                @foreach (array_slice($question->config['source_chunks'], 0, 3) as $chunk)
+                                    <div class="bg-slate-50 rounded p-2">
+                                        <div class="text-slate-600">{{ Str::limit($chunk, 200) }}</div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </details>
+                    @endif
+                </div>
+            @endif
         </div>
     @endforeach
 </div>

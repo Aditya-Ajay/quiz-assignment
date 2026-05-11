@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quiz Assignment — Complete Interview Preparation Guide</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 16mm 20mm 16mm;
+    @bottom-right { content: counter(page) " / " counter(pages); font-size: 9pt; color: #888; }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: #1f2328;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 28pt;
+    color: #0d1117;
+    border-bottom: 4px solid #0969da;
+    padding-bottom: 8px;
+    margin-top: 0;
+    page-break-before: always;
+  }
+  h1:first-of-type { page-break-before: avoid; }
+
+  h2 {
+    font-size: 18pt;
+    color: #0969da;
+    border-bottom: 2px solid #d0d7de;
+    padding-bottom: 6px;
+    margin-top: 32px;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 13.5pt;
+    color: #1f2328;
+    margin-top: 22px;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 11.5pt;
+    color: #24292f;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    page-break-after: avoid;
+  }
+
+  p { margin: 8px 0; }
+
+  code {
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    background: #f6f8fa;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 9.5pt;
+    color: #c7254e;
+  }
+
+  pre {
+    background: #f6f8fa;
+    border: 1px solid #d0d7de;
+    border-left: 4px solid #0969da;
+    border-radius: 6px;
+    padding: 10px 14px;
+    overflow-x: auto;
+    font-family: "SF Mono", "Consolas", "Monaco", monospace;
+    font-size: 9pt;
+    line-height: 1.45;
+    page-break-inside: avoid;
+    color: #24292f;
+  }
+  pre code { background: transparent; padding: 0; color: inherit; font-size: inherit; }
+
+  blockquote {
+    background: #fff8c5;
+    border-left: 4px solid #d4a72c;
+    padding: 8px 14px;
+    margin: 10px 0;
+    border-radius: 4px;
+    color: #4d3800;
+    page-break-inside: avoid;
+  }
+  blockquote p { margin: 4px 0; }
+
+  .callout {
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 12px 0;
+    page-break-inside: avoid;
+  }
+  .callout-tip { background: #ddf4ff; border-left: 4px solid #0969da; }
+  .callout-warn { background: #ffebe9; border-left: 4px solid #cf222e; }
+  .callout-success { background: #dafbe1; border-left: 4px solid #1a7f37; }
+  .callout-interview { background: #fbefff; border-left: 4px solid #8250df; }
+
+  .callout-title {
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    text-transform: uppercase;
+    font-size: 9pt;
+    letter-spacing: 0.5px;
+  }
+  .callout-tip .callout-title { color: #0969da; }
+  .callout-warn .callout-title { color: #cf222e; }
+  .callout-success .callout-title { color: #1a7f37; }
+  .callout-interview .callout-title { color: #8250df; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 9.5pt;
+    page-break-inside: avoid;
+  }
+  th, td {
+    border: 1px solid #d0d7de;
+    padding: 6px 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+  th { background: #f6f8fa; font-weight: 700; }
+  tr:nth-child(even) td { background: #fafbfc; }
+
+  .cover {
+    text-align: center;
+    padding: 80px 0 40px 0;
+    page-break-after: always;
+  }
+  .cover h1 {
+    font-size: 36pt;
+    border: none;
+    margin-bottom: 8px;
+  }
+  .cover .subtitle {
+    font-size: 14pt;
+    color: #57606a;
+    margin-bottom: 30px;
+  }
+  .cover .badge {
+    display: inline-block;
+    background: #0969da;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 11pt;
+    margin-top: 10px;
+  }
+  .cover .meta {
+    margin-top: 60px;
+    font-size: 10pt;
+    color: #57606a;
+  }
+
+  .toc { page-break-after: always; }
+  .toc h1 { border: none; }
+  .toc ol { font-size: 11pt; line-height: 2; }
+  .toc ol li { margin: 4px 0; }
+
+  ul, ol { padding-left: 22px; }
+  li { margin: 3px 0; }
+
+  .qa-box {
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 14px;
+    margin: 14px 0;
+    background: #fafbfc;
+    page-break-inside: avoid;
+  }
+  .qa-q {
+    font-weight: 700;
+    color: #0969da;
+    margin-bottom: 8px;
+  }
+  .qa-q::before { content: "Q: "; color: #cf222e; }
+  .qa-a { margin-top: 6px; }
+  .qa-a::before { content: "A: "; font-weight: 700; color: #1a7f37; }
+
+  .flow-step {
+    display: flex;
+    align-items: flex-start;
+    margin: 8px 0;
+    padding: 8px 12px;
+    background: #f6f8fa;
+    border-radius: 6px;
+    page-break-inside: avoid;
+  }
+  .flow-step-num {
+    background: #0969da;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+    line-height: 22px;
+    font-weight: 700;
+    margin-right: 12px;
+    flex-shrink: 0;
+    font-size: 10pt;
+  }
+
+  hr { border: none; border-top: 1px solid #d0d7de; margin: 20px 0; }
+
+  .small { font-size: 9pt; color: #57606a; }
+</style>
+</head>
+<body>
+
+<!-- ============================== COVER ============================== -->
+<div class="cover">
+  <h1>Quiz Assignment</h1>
+  <div class="subtitle">Complete Interview Preparation Guide</div>
+  <div class="badge">Laravel · PHP · Eloquent ORM · Strategy Pattern</div>
+  <div class="meta">
+    A from-zero walkthrough of every concept, every file, and every<br>
+    likely interview question — written for someone new to Laravel.
+  </div>
+</div>
+
+<!-- ============================== TOC ============================== -->
+<div class="toc">
+  <h1>Table of Contents</h1>
+  <ol>
+    <li><strong>Project Overview</strong> — what the app does</li>
+    <li><strong>The Big Picture</strong> — how Laravel apps work</li>
+    <li><strong>What is Laravel?</strong> — beginner orientation</li>
+    <li><strong>What is an ORM?</strong> — Eloquent explained</li>
+    <li><strong>The Request Lifecycle</strong> — browser → response, step by step</li>
+    <li><strong>Routing</strong> — <code>routes/web.php</code> deeply explained</li>
+    <li><strong>Controllers</strong> — every controller and method</li>
+    <li><strong>Models &amp; Database</strong> — schema, relationships, migrations</li>
+    <li><strong>Eloquent in Practice</strong> — the patterns used in this app</li>
+    <li><strong>The Question Type System</strong> — strategy pattern + registry</li>
+    <li><strong>The Service Container &amp; Dependency Injection</strong></li>
+    <li><strong>File Uploads &amp; Storage</strong></li>
+    <li><strong>Validation</strong></li>
+    <li><strong>Views &amp; Blade</strong></li>
+    <li><strong>The Complete Request Walkthrough</strong> — start to finish</li>
+    <li><strong>Glossary of Terms</strong></li>
+    <li><strong>50+ Interview Questions with Answers</strong></li>
+    <li><strong>Final Cheat Sheet &amp; Talking Points</strong></li>
+  </ol>
+</div>
+
+<!-- ============================== 1. OVERVIEW ============================== -->
+<h1>1. Project Overview</h1>
+
+<p>This project is a <strong>dynamic quiz system</strong> built with Laravel. Admins can create quizzes, add questions of <strong>five different types</strong>, and students can take those quizzes and get auto-scored.</p>
+
+<h3>What the app can do</h3>
+<ul>
+  <li><strong>Quiz CRUD</strong> — create, edit, delete quizzes (title + description).</li>
+  <li><strong>Add questions</strong> with rich body text, optional image, optional video URL, and a <code>marks</code> value.</li>
+  <li><strong>Five question types</strong>: Binary (Yes/No), Single Choice, Multiple Choice, Number Input (with tolerance), Text Input (with match modes).</li>
+  <li><strong>Take a quiz</strong> — student sees questions, submits answers, gets an auto-graded result.</li>
+  <li><strong>Review results</strong> — per-question marks awarded.</li>
+</ul>
+
+<h3>The two big ideas you must explain</h3>
+<div class="callout callout-interview">
+  <div class="callout-title">Interview Headline #1</div>
+  <p><strong>Strategy Pattern via a Type Registry.</strong> Different question types behave differently. Instead of giant <code>if/else</code> chains scattered across the controller, each type is a class implementing a common <code>QuestionType</code> interface. A registry maps a slug like <code>"binary"</code> to the right handler. Adding a new type = one new class + one line in the service provider.</p>
+</div>
+<div class="callout callout-interview">
+  <div class="callout-title">Interview Headline #2</div>
+  <p><strong>Single-table polymorphism with a JSON <code>config</code> column.</strong> Rather than 5 different question tables, all questions live in one <code>questions</code> table. Type-specific settings (e.g. tolerance for a number, match mode for text) live in a flexible JSON <code>config</code> column. Simple schema, infinite extensibility.</p>
+</div>
+
+<h3>The technology stack</h3>
+<table>
+  <tr><th>Layer</th><th>Technology</th><th>Role</th></tr>
+  <tr><td>Backend framework</td><td>Laravel 13</td><td>Routes, controllers, ORM, views</td></tr>
+  <tr><td>Language</td><td>PHP 8.x</td><td>Server-side logic</td></tr>
+  <tr><td>ORM</td><td>Eloquent</td><td>Maps PHP objects ↔ database rows</td></tr>
+  <tr><td>Database</td><td>SQLite</td><td>Single-file local DB (<code>database/database.sqlite</code>)</td></tr>
+  <tr><td>Frontend templating</td><td>Blade</td><td>HTML with PHP-friendly syntax</td></tr>
+  <tr><td>Asset bundler</td><td>Vite + Tailwind</td><td>CSS/JS compilation, dev server</td></tr>
+  <tr><td>File storage</td><td>Local disk (public)</td><td>Uploaded images for questions/options</td></tr>
+</table>
+
+<!-- ============================== 2. BIG PICTURE ============================== -->
+<h1>2. The Big Picture: How a Laravel App Works</h1>
+
+<p>Before diving into code, let's understand what happens between "user clicks a link" and "user sees a page". <strong>Every Laravel app follows the same lifecycle.</strong></p>
+
+<h3>The five-step lifecycle</h3>
+<div class="flow-step"><div class="flow-step-num">1</div><div><strong>Browser sends an HTTP request</strong> to your server (e.g. <code>GET /quizzes</code>).</div></div>
+<div class="flow-step"><div class="flow-step-num">2</div><div><strong>Laravel's router</strong> looks at the URL + verb and decides which controller method to call.</div></div>
+<div class="flow-step"><div class="flow-step-num">3</div><div><strong>The controller method runs</strong> — it talks to the database via the ORM, applies business logic, and prepares data.</div></div>
+<div class="flow-step"><div class="flow-step-num">4</div><div><strong>The controller returns a response</strong> — usually by rendering a Blade view (HTML) or redirecting.</div></div>
+<div class="flow-step"><div class="flow-step-num">5</div><div><strong>The browser receives the HTML</strong> and renders it.</div></div>
+
+<div class="callout callout-tip">
+  <div class="callout-title">Mental Model</div>
+  <p>Think of Laravel as a <strong>receptionist</strong>. The browser walks in saying "I want page X". The receptionist (router) checks a list, finds the right specialist (controller), the specialist fetches what's needed from the filing cabinet (database), assembles a document (view), and hands it back to the visitor.</p>
+</div>
+
+<h3>The MVC pattern</h3>
+<p>Laravel is built around <strong>MVC</strong> — Model, View, Controller:</p>
+<table>
+  <tr><th>Letter</th><th>Stands for</th><th>In this project</th><th>Plain English</th></tr>
+  <tr><td>M</td><td>Model</td><td><code>app/Models/Quiz.php</code>, <code>Question.php</code>, etc.</td><td>The data and rules about it (a Quiz has a title, a Quiz has many Questions).</td></tr>
+  <tr><td>V</td><td>View</td><td><code>resources/views/quizzes/*.blade.php</code></td><td>The HTML the user sees.</td></tr>
+  <tr><td>C</td><td>Controller</td><td><code>app/Http/Controllers/QuizController.php</code></td><td>The traffic cop. Receives the request, asks the model for data, sends data to the view.</td></tr>
+</table>
+
+<!-- ============================== 3. WHAT IS LARAVEL ============================== -->
+<h1>3. What is Laravel?</h1>
+
+<p><strong>Laravel is a PHP framework</strong>. A framework is a collection of pre-written code that solves common problems so you don't have to. Routing, database access, templating, validation, file uploads, sessions, security — all included.</p>
+
+<h3>Why Laravel exists</h3>
+<p>Without a framework, building a web app means you write everything yourself: parsing HTTP requests, escaping HTML, querying the database safely, handling cookies, validating forms. Tedious and error-prone. Laravel gives you tested, secure defaults so you focus on your application's logic.</p>
+
+<h3>The Laravel folders you actually touch</h3>
+<table>
+  <tr><th>Folder</th><th>What lives there</th></tr>
+  <tr><td><code>routes/web.php</code></td><td>URL → controller mappings</td></tr>
+  <tr><td><code>app/Http/Controllers/</code></td><td>Controllers — handle requests</td></tr>
+  <tr><td><code>app/Models/</code></td><td>Eloquent models — represent DB tables</td></tr>
+  <tr><td><code>app/Providers/</code></td><td>Bootstrap code (e.g. wiring up the registry)</td></tr>
+  <tr><td><code>database/migrations/</code></td><td>Schema definitions (creates tables)</td></tr>
+  <tr><td><code>resources/views/</code></td><td>Blade templates (HTML)</td></tr>
+  <tr><td><code>config/</code></td><td>Configuration files</td></tr>
+  <tr><td><code>storage/</code></td><td>Logs, uploaded files, compiled views</td></tr>
+  <tr><td><code>public/</code></td><td>Web root — only files in here are directly accessible via URL</td></tr>
+</table>
+
+<h3>What is Artisan?</h3>
+<p><code>php artisan</code> is Laravel's command-line tool. You'll see it used like:</p>
+<pre>php artisan serve                      # start dev server on :8000
+php artisan migrate                    # apply migrations to DB
+php artisan make:controller Foo        # generate a controller file
+php artisan route:list                 # show all registered routes
+php artisan tinker                     # interactive REPL on your app</pre>
+
+<!-- ============================== 4. ORM ============================== -->
+<h1>4. What is an ORM? (Eloquent Explained)</h1>
+
+<p><strong>ORM = Object-Relational Mapping</strong>. It's a layer that lets you treat database rows as PHP objects, instead of writing raw SQL.</p>
+
+<h3>Without an ORM (raw SQL)</h3>
+<pre>$pdo = new PDO("sqlite:database.sqlite");
+$stmt = $pdo->prepare("SELECT * FROM quizzes WHERE id = ?");
+$stmt->execute([5]);
+$row = $stmt->fetch(PDO::FETCH_ASSOC);
+echo $row['title'];</pre>
+
+<h3>With Eloquent (the ORM Laravel uses)</h3>
+<pre>$quiz = Quiz::find(5);
+echo $quiz->title;</pre>
+
+<p>Same result, much cleaner. Eloquent runs the SQL behind the scenes.</p>
+
+<h3>What Eloquent gives you</h3>
+<ul>
+  <li><strong>Models</strong> — one PHP class per table. <code>Quiz</code> ↔ <code>quizzes</code> table.</li>
+  <li><strong>Relationships</strong> — express "a Quiz has many Questions" in code; Eloquent figures out the foreign keys.</li>
+  <li><strong>Query builder</strong> — chainable, expressive: <code>Quiz::where('title', 'Math')->latest()->get()</code>.</li>
+  <li><strong>Mass assignment protection</strong> — only fields in <code>$fillable</code> can be bulk-set.</li>
+  <li><strong>Casts</strong> — auto-convert DB values (e.g. JSON column → PHP array; <code>0/1</code> → <code>true/false</code>).</li>
+  <li><strong>Eager loading</strong> — solve the "N+1 query" problem with one line.</li>
+</ul>
+
+<h3>The convention magic</h3>
+<p>Eloquent uses <strong>convention over configuration</strong>. By default:</p>
+<ul>
+  <li>Class <code>Quiz</code> → table <code>quizzes</code> (auto-pluralize).</li>
+  <li>Primary key is <code>id</code>.</li>
+  <li>Foreign key for "belongs to Quiz" is <code>quiz_id</code>.</li>
+  <li>Timestamps <code>created_at</code> and <code>updated_at</code> auto-managed.</li>
+</ul>
+<p>You can override any of these, but if you follow the convention, you write almost no configuration.</p>
+
+<!-- ============================== 5. REQUEST LIFECYCLE ============================== -->
+<h1>5. The Request Lifecycle in Detail</h1>
+
+<p>Let's trace what happens when a user opens <strong><code>http://localhost:8000/quizzes</code></strong> in their browser.</p>
+
+<div class="flow-step"><div class="flow-step-num">1</div><div><strong>Browser fires <code>GET /quizzes</code></strong>. The browser opens a TCP connection to your server.</div></div>
+<div class="flow-step"><div class="flow-step-num">2</div><div><strong>Web server (PHP built-in via <code>php artisan serve</code>) hands the request to <code>public/index.php</code></strong>. This is the only PHP file the web server ever runs — it's the front controller.</div></div>
+<div class="flow-step"><div class="flow-step-num">3</div><div><strong>Laravel boots</strong>. The framework loads, reads <code>.env</code>, registers all <strong>service providers</strong> (including <code>QuestionTypeServiceProvider</code> which sets up our registry).</div></div>
+<div class="flow-step"><div class="flow-step-num">4</div><div><strong>The Router runs middleware and matches the route</strong>. Middleware are layers like authentication, CSRF protection, session handling. After they pass, it finds <code>Route::resource('quizzes', QuizController::class)</code> which maps <code>GET /quizzes</code> → <code>QuizController@index</code>.</div></div>
+<div class="flow-step"><div class="flow-step-num">5</div><div><strong>Laravel constructs the controller</strong>. Looking at the constructor, if it needs anything (like <code>QuestionTypeRegistry</code>), the service container builds and injects it.</div></div>
+<div class="flow-step"><div class="flow-step-num">6</div><div><strong><code>index()</code> executes</strong>. It runs <code>Quiz::withCount('questions')->latest()->get()</code> which Eloquent translates into SQL and runs against SQLite.</div></div>
+<div class="flow-step"><div class="flow-step-num">7</div><div><strong>The view renders</strong>. <code>view('quizzes.index', compact('quizzes'))</code> compiles <code>resources/views/quizzes/index.blade.php</code> with the <code>$quizzes</code> variable.</div></div>
+<div class="flow-step"><div class="flow-step-num">8</div><div><strong>HTML is returned</strong>. Laravel sends the rendered HTML back through any "after" middleware, then to the browser.</div></div>
+<div class="flow-step"><div class="flow-step-num">9</div><div><strong>Browser renders</strong>. Done.</div></div>
+
+<div class="callout callout-interview">
+  <div class="callout-title">Likely Question</div>
+  <p><strong>"What happens between the URL and the page?"</strong> — Walk them through these 9 steps. Even high-level acknowledgement of front-controller, service container boot, middleware chain, route match, controller dispatch, view render is impressive.</p>
+</div>
+
+<!-- ============================== 6. ROUTING ============================== -->
+<h1>6. Routing Explained</h1>
+
+<p>Routes live in <code>routes/web.php</code>. They tell Laravel: "When the browser asks for THIS URL with THIS method, run THAT controller method."</p>
+
+<h3>The actual file</h3>
+<pre>Route::redirect('/', '/quizzes');
+
+Route::resource('quizzes', QuizController::class);
+
+Route::post('quizzes/{quiz}/questions', [QuestionController::class, 'store'])
+    -&gt;name('questions.store');
+Route::get('questions/{question}/edit', [QuestionController::class, 'edit'])
+    -&gt;name('questions.edit');
+Route::put('questions/{question}', [QuestionController::class, 'update'])
+    -&gt;name('questions.update');
+Route::delete('questions/{question}', [QuestionController::class, 'destroy'])
+    -&gt;name('questions.destroy');
+
+Route::get('quizzes/{quiz}/take', [AttemptController::class, 'start'])
+    -&gt;name('attempts.start');
+Route::post('attempts/{attempt}/submit', [AttemptController::class, 'submit'])
+    -&gt;name('attempts.submit');
+Route::get('attempts/{attempt}', [AttemptController::class, 'show'])
+    -&gt;name('attempts.show');</pre>
+
+<h3>Line by line</h3>
+
+<h4><code>Route::redirect('/', '/quizzes');</code></h4>
+<p>If anyone visits the root URL <code>/</code>, send them to <code>/quizzes</code>. Saves writing a controller for a one-liner redirect.</p>
+
+<h4><code>Route::resource('quizzes', QuizController::class);</code></h4>
+<p>This <strong>one line</strong> creates 7 routes — the standard RESTful set:</p>
+<table>
+  <tr><th>Verb</th><th>URI</th><th>Method</th><th>Name</th><th>Purpose</th></tr>
+  <tr><td>GET</td><td>/quizzes</td><td>index</td><td>quizzes.index</td><td>List all quizzes</td></tr>
+  <tr><td>GET</td><td>/quizzes/create</td><td>create</td><td>quizzes.create</td><td>Show "new quiz" form</td></tr>
+  <tr><td>POST</td><td>/quizzes</td><td>store</td><td>quizzes.store</td><td>Save the new quiz</td></tr>
+  <tr><td>GET</td><td>/quizzes/{quiz}</td><td>show</td><td>quizzes.show</td><td>Show one quiz</td></tr>
+  <tr><td>GET</td><td>/quizzes/{quiz}/edit</td><td>edit</td><td>quizzes.edit</td><td>Show edit form</td></tr>
+  <tr><td>PUT/PATCH</td><td>/quizzes/{quiz}</td><td>update</td><td>quizzes.update</td><td>Save edits</td></tr>
+  <tr><td>DELETE</td><td>/quizzes/{quiz}</td><td>destroy</td><td>quizzes.destroy</td><td>Delete the quiz</td></tr>
+</table>
+
+<h4><code>QuizController::class</code></h4>
+<p>This is <strong>not</strong> creating an instance. <code>::class</code> is a PHP language construct that returns the class name as a string: <code>"App\Http\Controllers\QuizController"</code>. We use it instead of writing the string ourselves because the IDE can autocomplete and refactor it safely.</p>
+
+<h4>Named routes — <code>-&gt;name('questions.store')</code></h4>
+<p>A label for the route. Anywhere in the app you can write <code>route('questions.store', $quiz)</code> instead of hardcoding the URL. If the URL ever changes, every reference still works.</p>
+
+<h4>Route parameters — <code>{quiz}</code>, <code>{question}</code>, <code>{attempt}</code></h4>
+<p>Anything in curly braces is a placeholder. Laravel passes the value to the controller. With <strong>route-model binding</strong> (see below), Laravel goes a step further: if the controller method declares <code>Quiz $quiz</code>, Laravel looks up the model by ID and passes the actual <code>Quiz</code> object — or returns 404 if not found.</p>
+
+<div class="callout callout-success">
+  <div class="callout-title">Route-Model Binding (must know!)</div>
+  <p>When a controller method signature says <code>public function show(Quiz $quiz)</code>, Laravel sees the URL <code>/quizzes/5</code>, runs <code>Quiz::findOrFail(5)</code>, and hands the resulting model object to your method. <strong>You never write the lookup yourself</strong>. If <code>5</code> doesn't exist, the user gets a 404 automatically.</p>
+</div>
+
+<h3>Why some routes are written manually instead of <code>Route::resource</code></h3>
+<p>The "questions" routes are <strong>nested under quizzes</strong> (<code>/quizzes/{quiz}/questions</code>) and only some of the 7 RESTful actions are needed. Easier to write 4 lines than configure a partial nested resource.</p>
+
+<!-- ============================== 7. CONTROLLERS ============================== -->
+<h1>7. Controllers in Detail</h1>
+
+<p>A controller is a class with public methods. Each method handles one type of HTTP request. The method's job is: <strong>read the request, do work (usually DB), return a response</strong>.</p>
+
+<h2>7.1 QuizController</h2>
+
+<h3><code>index()</code> — list quizzes</h3>
+<pre>public function index()
+{
+    $quizzes = Quiz::withCount('questions')-&gt;latest()-&gt;get();
+    return view('quizzes.index', compact('quizzes'));
+}</pre>
+<ul>
+  <li><code>Quiz::withCount('questions')</code> — fetch all quizzes AND for each one, count its questions (in a single SQL query, not N+1). Each quiz then has a <code>questions_count</code> integer property.</li>
+  <li><code>-&gt;latest()</code> — order by <code>created_at DESC</code>, newest first.</li>
+  <li><code>-&gt;get()</code> — execute the query, return a Collection of Quiz objects.</li>
+  <li><code>view('quizzes.index', compact('quizzes'))</code> — render <code>resources/views/quizzes/index.blade.php</code> and pass <code>$quizzes</code> into it. <code>compact('quizzes')</code> is shorthand for <code>['quizzes' =&gt; $quizzes]</code>.</li>
+</ul>
+
+<h3><code>create()</code> — show "new quiz" form</h3>
+<pre>public function create()
+{
+    return view('quizzes.create');
+}</pre>
+<p>Renders the empty form. No DB work needed.</p>
+
+<h3><code>store()</code> — save a new quiz</h3>
+<pre>public function store(Request $request)
+{
+    $data = $request-&gt;validate([
+        'title' =&gt; ['required', 'string', 'max:255'],
+        'description' =&gt; ['nullable', 'string'],
+    ]);
+
+    $quiz = Quiz::create($data);
+
+    return redirect()-&gt;route('quizzes.edit', $quiz)
+        -&gt;with('status', 'Quiz created. Add your questions below.');
+}</pre>
+<ul>
+  <li><strong>Validate first</strong>. If validation fails, Laravel auto-redirects back with errors. If it passes, <code>$data</code> contains only the validated fields.</li>
+  <li><code>Quiz::create($data)</code> — create a new row from the array (only fields in <code>$fillable</code> on the model are accepted, for security).</li>
+  <li><strong>Redirect to the edit page</strong>, not back to a "show" page. Why? Because creating a quiz is just step 1 — you still need to add questions. Flash a one-time success message via <code>-&gt;with('status', ...)</code>.</li>
+</ul>
+
+<h3><code>edit()</code> — show the editor</h3>
+<pre>public function edit(Quiz $quiz, QuestionTypeRegistry $registry)
+{
+    $quiz-&gt;load('questions.options');
+
+    return view('quizzes.edit', [
+        'quiz' =&gt; $quiz,
+        'types' =&gt; $registry-&gt;options(),
+        'registry' =&gt; $registry,
+    ]);
+}</pre>
+<ul>
+  <li><strong>Two things injected</strong>: <code>Quiz $quiz</code> (route-model binding from the URL) and <code>QuestionTypeRegistry $registry</code> (from the service container).</li>
+  <li><code>$quiz-&gt;load('questions.options')</code> — eager-load questions AND each question's options. Without this, the view would trigger one extra query per question (the N+1 problem).</li>
+  <li><strong>Three variables to the view</strong>: the quiz itself, a slug→label map for the question-type dropdown, and the full registry object so the view can ask for type-specific partials.</li>
+</ul>
+
+<h3><code>update()</code> — save quiz edits</h3>
+<pre>public function update(Request $request, Quiz $quiz)
+{
+    $data = $request-&gt;validate([
+        'title' =&gt; ['required', 'string', 'max:255'],
+        'description' =&gt; ['nullable', 'string'],
+    ]);
+
+    $quiz-&gt;update($data);
+
+    return redirect()-&gt;route('quizzes.edit', $quiz)-&gt;with('status', 'Quiz updated.');
+}</pre>
+<p>Same pattern as <code>store</code>, but updating an existing model. <code>$quiz-&gt;update($data)</code> sets the new values and saves.</p>
+
+<h3><code>destroy()</code> — delete a quiz (and clean up files)</h3>
+<pre>public function destroy(Quiz $quiz)
+{
+    foreach ($quiz-&gt;questions as $question) {
+        if ($question-&gt;image_path) {
+            Storage::disk('public')-&gt;delete($question-&gt;image_path);
+        }
+        foreach ($question-&gt;options as $option) {
+            if ($option-&gt;image_path) {
+                Storage::disk('public')-&gt;delete($option-&gt;image_path);
+            }
+        }
+    }
+
+    $quiz-&gt;delete();
+
+    return redirect()-&gt;route('quizzes.index')-&gt;with('status', 'Quiz deleted.');
+}</pre>
+<div class="callout callout-warn">
+  <div class="callout-title">Why the manual file cleanup?</div>
+  <p>The DB rows cascade-delete via foreign key constraints (<code>cascadeOnDelete</code> in the migration). But uploaded files on disk are <strong>not</strong> tracked by Eloquent — they would be orphaned forever. So we delete them manually before the row goes.</p>
+</div>
+
+<h2>7.2 QuestionController</h2>
+
+<p>This controller manages individual questions. Critically, it uses the <strong>QuestionTypeRegistry</strong> to delegate type-specific work — it never has an <code>if/else</code> over question types.</p>
+
+<h3>Constructor</h3>
+<pre>public function __construct(private QuestionTypeRegistry $registry) {}</pre>
+<p>Constructor property promotion (PHP 8). Laravel injects the registry on every request. The controller never knows about specific type classes.</p>
+
+<h3><code>store()</code> — create a question</h3>
+<pre>public function store(Request $request, Quiz $quiz)
+{
+    $base = $this-&gt;validateBase($request);
+    $type = $this-&gt;registry-&gt;for($base['type']);
+
+    $imagePath = $request-&gt;hasFile('image')
+        ? $request-&gt;file('image')-&gt;store('questions', 'public')
+        : null;
+
+    $question = $quiz-&gt;questions()-&gt;create([
+        'type' =&gt; $base['type'],
+        'body_html' =&gt; $base['body_html'],
+        'image_path' =&gt; $imagePath,
+        'video_url' =&gt; $base['video_url'],
+        'marks' =&gt; $base['marks'],
+        'position' =&gt; $quiz-&gt;questions()-&gt;max('position') + 1,
+        'config' =&gt; $type-&gt;buildConfig($request-&gt;all()),
+    ]);
+
+    $type-&gt;persistOptions($question, $request-&gt;all());
+    $this-&gt;persistOptionImages($question, $request);
+
+    return redirect()-&gt;route('quizzes.edit', $quiz)-&gt;with('status', 'Question added.');
+}</pre>
+
+<p>Step by step:</p>
+<ol>
+  <li><strong>Validate common fields</strong> via <code>validateBase()</code> (body, marks, video, image, type).</li>
+  <li><strong>Look up the type handler</strong> from the registry — <code>$type</code> is now a <code>BinaryType</code>, <code>MultipleChoiceType</code>, etc.</li>
+  <li><strong>If an image was uploaded</strong>, store it on the public disk and capture the relative path.</li>
+  <li><strong>Create the question</strong> via the relationship — <code>$quiz-&gt;questions()-&gt;create([...])</code> auto-fills <code>quiz_id</code>.</li>
+  <li><strong>Position</strong> = current max + 1 → new questions go at the end.</li>
+  <li><strong>config</strong> = whatever the type handler returns from <code>buildConfig()</code>. Stored as JSON in the DB.</li>
+  <li><strong>Delegate option saving</strong> — the type knows how (multiple choice creates 4 rows; binary creates 0).</li>
+  <li><strong>Handle option images</strong> separately.</li>
+  <li><strong>POST/Redirect/GET</strong> — redirect to the editor with a flash message.</li>
+</ol>
+
+<h3><code>edit()</code> — show edit form</h3>
+<pre>public function edit(Question $question)
+{
+    $question-&gt;load('options');
+    return view('questions.edit', [
+        'question' =&gt; $question,
+        'type' =&gt; $this-&gt;registry-&gt;for($question-&gt;type),
+    ]);
+}</pre>
+<p>Pass the question and its type handler to the view. The view uses the handler's <code>editorView()</code> method to include the right Blade partial.</p>
+
+<h3><code>update()</code></h3>
+<p>Same pattern as <code>store</code> but with extra image logic for three cases:</p>
+<ul>
+  <li><strong>New image uploaded</strong> → delete old, store new.</li>
+  <li><strong>"Remove image" checkbox checked</strong> → delete file, null the column.</li>
+  <li><strong>Neither</strong> → leave the existing image alone.</li>
+</ul>
+
+<h3><code>destroy()</code></h3>
+<p>Captures <code>$quizId</code> first (we need it for the redirect after deletion), deletes all uploaded files, then deletes the question. Option rows cascade via FK constraint.</p>
+
+<h3><code>validateBase()</code> — DRY validation helper</h3>
+<pre>private function validateBase(Request $request, bool $isUpdate = false): array
+{
+    $rules = [
+        'body_html' =&gt; ['required', 'string'],
+        'video_url' =&gt; ['nullable', 'url'],
+        'marks' =&gt; ['required', 'integer', 'min:1'],
+        'image' =&gt; ['nullable', 'image', 'max:4096'],
+    ];
+
+    if (! $isUpdate) {
+        $rules['type'] = ['required', 'string', 'in:'.implode(',', array_keys($this-&gt;registry-&gt;all()))];
+    }
+
+    return $request-&gt;validate($rules);
+}</pre>
+<div class="callout callout-tip">
+  <div class="callout-title">Clever bit</div>
+  <p>The <code>type</code> validation rule is generated <strong>from the registry</strong>: <code>in:binary,single_choice,multiple_choice,number,text</code>. Add a new type → validation auto-extends. Open/Closed Principle in action.</p>
+</div>
+
+<h3><code>persistOptionImages()</code></h3>
+<p>Form sends option images as an array (<code>option_images[0]</code>, <code>option_images[1]</code>, ...). For each option, check if there's a file at the same index, replace if so.</p>
+
+<h2>7.3 AttemptController</h2>
+
+<p>Handles a student taking a quiz. Three actions: <code>start</code>, <code>submit</code>, <code>show</code>.</p>
+
+<h3><code>start()</code> — begin an attempt</h3>
+<pre>public function start(Quiz $quiz)
+{
+    abort_if($quiz-&gt;questions()-&gt;count() === 0, 404, 'This quiz has no questions yet.');
+    $quiz-&gt;load('questions.options');
+
+    $attempt = $quiz-&gt;attempts()-&gt;create([
+        'started_at' =&gt; now(),
+        'max_score' =&gt; $quiz-&gt;totalMarks(),
+    ]);
+
+    return view('attempts.take', [
+        'quiz' =&gt; $quiz,
+        'attempt' =&gt; $attempt,
+        'registry' =&gt; $this-&gt;registry,
+    ]);
+}</pre>
+<ul>
+  <li><strong>Guard:</strong> 404 if the quiz has no questions.</li>
+  <li><strong>Eager-load</strong> questions and options.</li>
+  <li><strong>Create an Attempt record</strong> — captures start time and max possible score.</li>
+  <li>Render the "take quiz" page.</li>
+</ul>
+
+<h3><code>submit()</code> — score the answers</h3>
+<pre>public function submit(Request $request, Attempt $attempt)
+{
+    abort_if($attempt-&gt;isSubmitted(), 403, 'This attempt has already been submitted.');
+
+    $attempt-&gt;load('quiz.questions.options');
+    $raw = (array) $request-&gt;input('answers', []);
+
+    $total = 0.0;
+
+    foreach ($attempt-&gt;quiz-&gt;questions as $question) {
+        $type = $this-&gt;registry-&gt;for($question-&gt;type);
+        $payload = $type-&gt;normalizePayload($raw[$question-&gt;id] ?? null);
+        $marks = $type-&gt;evaluate($question, $payload);
+
+        $attempt-&gt;answers()-&gt;create([
+            'question_id' =&gt; $question-&gt;id,
+            'payload' =&gt; $payload,
+            'marks_awarded' =&gt; $marks,
+        ]);
+
+        $total += $marks;
+    }
+
+    $attempt-&gt;update([
+        'submitted_at' =&gt; now(),
+        'score' =&gt; $total,
+        'max_score' =&gt; $attempt-&gt;quiz-&gt;totalMarks(),
+    ]);
+
+    return redirect()-&gt;route('attempts.show', $attempt);
+}</pre>
+
+<p>The scoring loop is the heart of the app. For every question:</p>
+<ol>
+  <li><strong>Get the right type handler.</strong></li>
+  <li><strong>Normalize</strong> the raw form input into a clean array.</li>
+  <li><strong>Evaluate</strong> — the type returns marks awarded (0 to <code>$question-&gt;marks</code>).</li>
+  <li><strong>Save an Answer row</strong> with the payload and marks.</li>
+  <li><strong>Accumulate</strong> the total.</li>
+</ol>
+<p>After the loop, update the Attempt with the final score and submission time.</p>
+
+<div class="callout callout-warn">
+  <div class="callout-title">Notice: zero <code>if/else</code> over question types</div>
+  <p>The scoring loop is type-agnostic. It just calls methods on the type handler. This is the strategy pattern paying off — the controller would not change if you added 50 more question types tomorrow.</p>
+</div>
+
+<h3><code>show()</code> — display the result</h3>
+<pre>public function show(Attempt $attempt)
+{
+    abort_unless($attempt-&gt;isSubmitted(), 404);
+    $attempt-&gt;load('quiz', 'answers.question.options');
+
+    return view('attempts.result', [
+        'attempt' =&gt; $attempt,
+        'registry' =&gt; $this-&gt;registry,
+    ]);
+}</pre>
+<p>Eager-load everything needed for the review page; render the result view.</p>
+
+<!-- ============================== 8. MODELS & DB ============================== -->
+<h1>8. Models &amp; Database</h1>
+
+<h3>The schema (5 tables)</h3>
+<table>
+  <tr><th>Table</th><th>Columns</th><th>Relationships</th></tr>
+  <tr><td>quizzes</td><td>id, title, description, timestamps</td><td>has many questions, has many attempts</td></tr>
+  <tr><td>questions</td><td>id, quiz_id (FK), type, body_html, image_path, video_url, marks, config (JSON), position, timestamps</td><td>belongs to quiz, has many options</td></tr>
+  <tr><td>options</td><td>id, question_id (FK), label, image_path, is_correct, position, timestamps</td><td>belongs to question</td></tr>
+  <tr><td>attempts</td><td>id, quiz_id (FK), started_at, submitted_at, score, max_score, timestamps</td><td>belongs to quiz, has many answers</td></tr>
+  <tr><td>answers</td><td>id, attempt_id (FK), question_id (FK), payload (JSON), marks_awarded, timestamps</td><td>belongs to attempt, belongs to question</td></tr>
+</table>
+
+<h3>The Quiz model</h3>
+<pre>class Quiz extends Model
+{
+    use HasFactory;
+
+    protected $fillable = ['title', 'description'];
+
+    public function questions(): HasMany
+    {
+        return $this-&gt;hasMany(Question::class)-&gt;orderBy('position');
+    }
+
+    public function attempts(): HasMany
+    {
+        return $this-&gt;hasMany(Attempt::class);
+    }
+
+    public function totalMarks(): int
+    {
+        return (int) $this-&gt;questions()-&gt;sum('marks');
+    }
+}</pre>
+
+<ul>
+  <li><code>$fillable</code> — only these fields can be mass-assigned via <code>create()</code> or <code>update()</code>. Security against attackers POSTing extra fields.</li>
+  <li><code>questions()</code> — defines the <strong>has-many</strong> relationship. The <code>orderBy('position')</code> means whenever you load questions, they come out in order.</li>
+  <li><code>totalMarks()</code> — a helper to sum marks across all questions. Used when starting/submitting an attempt.</li>
+</ul>
+
+<h3>The Question model</h3>
+<pre>class Question extends Model
+{
+    protected $fillable = ['quiz_id', 'type', 'body_html', 'image_path',
+                           'video_url', 'marks', 'config', 'position'];
+
+    protected $casts = [
+        'config' =&gt; 'array',
+        'marks' =&gt; 'integer',
+        'position' =&gt; 'integer',
+    ];
+
+    public function quiz(): BelongsTo { return $this-&gt;belongsTo(Quiz::class); }
+    public function options(): HasMany { return $this-&gt;hasMany(Option::class)-&gt;orderBy('position'); }
+}</pre>
+
+<div class="callout callout-tip">
+  <div class="callout-title">The <code>casts</code> array — important!</div>
+  <p>The <code>config</code> column stores JSON in the DB. With <code>'config' =&gt; 'array'</code> in <code>$casts</code>, Eloquent <strong>automatically</strong> decodes it into a PHP array when you read, and encodes it back when you save. You never call <code>json_encode</code> or <code>json_decode</code> yourself.</p>
+</div>
+
+<h3>The migration that creates <code>questions</code></h3>
+<pre>Schema::create('questions', function (Blueprint $table) {
+    $table-&gt;id();
+    $table-&gt;foreignId('quiz_id')-&gt;constrained()-&gt;cascadeOnDelete();
+    $table-&gt;string('type');
+    $table-&gt;longText('body_html');
+    $table-&gt;string('image_path')-&gt;nullable();
+    $table-&gt;string('video_url')-&gt;nullable();
+    $table-&gt;unsignedInteger('marks')-&gt;default(1);
+    $table-&gt;json('config')-&gt;nullable();
+    $table-&gt;unsignedInteger('position')-&gt;default(0);
+    $table-&gt;timestamps();
+    $table-&gt;index(['quiz_id', 'position']);
+});</pre>
+<ul>
+  <li><code>foreignId('quiz_id')-&gt;constrained()-&gt;cascadeOnDelete()</code> — creates a foreign key to <code>quizzes.id</code>. If the parent quiz is deleted, all its questions are auto-deleted by the database.</li>
+  <li><code>json('config')</code> — native JSON column type.</li>
+  <li><code>index(['quiz_id', 'position'])</code> — composite index because we frequently query questions for a quiz, ordered by position. Speeds up that query massively.</li>
+</ul>
+
+<h3>What is a migration?</h3>
+<p>A migration is a versioned, code-based way to evolve the database schema. Instead of running raw <code>CREATE TABLE</code> SQL by hand, you write a PHP file and run <code>php artisan migrate</code>. Every team member, every server, gets the same schema. You can also <code>migrate:rollback</code> to undo.</p>
+
+<!-- ============================== 9. ELOQUENT PATTERNS ============================== -->
+<h1>9. Eloquent in Practice</h1>
+
+<h3>Relationships</h3>
+<table>
+  <tr><th>Type</th><th>Example</th><th>Use</th></tr>
+  <tr><td>hasMany</td><td><code>Quiz::questions()</code></td><td>One Quiz → many Questions</td></tr>
+  <tr><td>belongsTo</td><td><code>Question::quiz()</code></td><td>One Question → one Quiz (the inverse)</td></tr>
+</table>
+
+<h3>The query patterns used in this app</h3>
+
+<h4><code>Quiz::withCount('questions')-&gt;latest()-&gt;get()</code></h4>
+<p>Fetches all quizzes, attaches a <code>questions_count</code> integer to each (in one efficient subquery), orders by created_at desc.</p>
+
+<h4><code>$quiz-&gt;load('questions.options')</code></h4>
+<p>Eager-load: fetch all questions for this quiz, AND all options for each question. <strong>Three queries total</strong> instead of N+1. The dot notation means "nested relationship".</p>
+
+<h4><code>$quiz-&gt;questions()-&gt;create([...])</code></h4>
+<p>Create a new Question that belongs to this quiz. Eloquent auto-sets <code>quiz_id = $quiz-&gt;id</code>. You don't pass it.</p>
+
+<h4><code>$quiz-&gt;questions()-&gt;max('position') + 1</code></h4>
+<p>Run a SQL <code>MAX(position)</code> on this quiz's questions. Used to set the position of the next question to "last + 1".</p>
+
+<h4><code>$question-&gt;options()-&gt;delete()</code></h4>
+<p>Delete every option belonging to this question — used when re-saving options on update.</p>
+
+<h4><code>$question-&gt;options-&gt;firstWhere('id', $pickedId)</code></h4>
+<p>This is on the <strong>collection</strong>, not the query. Once options are loaded into memory, find the one with that id without hitting the DB again.</p>
+
+<h3>The N+1 problem (very common interview question)</h3>
+<div class="callout callout-warn">
+  <div class="callout-title">N+1 Defined</div>
+  <p>You fetch N parents in 1 query. Then you loop and access a relationship on each — triggering N extra queries. Total: N+1 queries. For 100 quizzes with questions, that's 101 SQL hits per page load.</p>
+</div>
+<p><strong>Fix:</strong> Eager-load with <code>with()</code> or <code>load()</code>. Or use <code>withCount()</code> when you only need the count.</p>
+
+<h3><code>load</code> vs <code>loadMissing</code> vs <code>fresh</code></h3>
+<table>
+  <tr><th>Method</th><th>Behavior</th></tr>
+  <tr><td><code>$model-&gt;load('rel')</code></td><td>Always loads the relationship (re-runs the query)</td></tr>
+  <tr><td><code>$model-&gt;loadMissing('rel')</code></td><td>Loads only if not already loaded</td></tr>
+  <tr><td><code>$model-&gt;fresh('rel')</code></td><td>Returns a NEW model freshly fetched from DB with that relationship</td></tr>
+</table>
+
+<!-- ============================== 10. TYPE SYSTEM ============================== -->
+<h1>10. The Question Type System (Strategy + Registry)</h1>
+
+<p>This is the most important architectural piece. Be ready to walk through it.</p>
+
+<h3>The problem it solves</h3>
+<p>Without this pattern, every method that touches questions would have a giant <code>if/else</code> over the type:</p>
+<pre>// THE MESS THIS CODE AVOIDS
+if ($question-&gt;type === 'binary') { /* score binary */ }
+elseif ($question-&gt;type === 'multiple_choice') { /* score MC */ }
+elseif ($question-&gt;type === 'number') { /* score number */ }
+// ... in store(), update(), submit(), every view ...</pre>
+
+<p>Adding a new type would mean editing 6+ files. Forgetting one breaks something silently.</p>
+
+<h3>The solution</h3>
+<p>Each type is a class implementing a <code>QuestionType</code> interface. A registry holds them. The controller looks up by slug and delegates.</p>
+
+<h3>The interface (the contract)</h3>
+<pre>interface QuestionType
+{
+    public function slug(): string;
+    public function label(): string;
+    public function buildConfig(array $input): array;
+    public function persistOptions(Question $q, array $input): void;
+    public function normalizePayload(mixed $raw): array;
+    public function evaluate(Question $q, array $payload): float;
+    public function editorView(): string;
+    public function inputView(): string;
+    public function reviewView(): string;
+}</pre>
+
+<table>
+  <tr><th>Method</th><th>Plain English</th></tr>
+  <tr><td>slug()</td><td>"What's my unique short name?"</td></tr>
+  <tr><td>label()</td><td>"What's my human-readable name (for UI)?"</td></tr>
+  <tr><td>buildConfig($input)</td><td>"What type-specific settings should we save in the JSON config?"</td></tr>
+  <tr><td>persistOptions($q, $input)</td><td>"Save my answer options however I see fit."</td></tr>
+  <tr><td>normalizePayload($raw)</td><td>"Clean up the raw user answer into a structured array."</td></tr>
+  <tr><td>evaluate($q, $payload)</td><td>"Score this answer. Return marks awarded."</td></tr>
+  <tr><td>editorView()</td><td>"Which Blade partial renders my admin form fields?"</td></tr>
+  <tr><td>inputView()</td><td>"Which Blade partial renders me for the student?"</td></tr>
+  <tr><td>reviewView()</td><td>"Which Blade partial renders me on the result page?"</td></tr>
+</table>
+
+<h3>The registry</h3>
+<pre>class QuestionTypeRegistry
+{
+    private array $types = [];
+
+    public function register(QuestionType $type): self
+    {
+        $this-&gt;types[$type-&gt;slug()] = $type;
+        return $this;
+    }
+
+    public function for(string $slug): QuestionType
+    {
+        if (! isset($this-&gt;types[$slug])) {
+            throw new RuntimeException("Unknown question type: {$slug}");
+        }
+        return $this-&gt;types[$slug];
+    }
+
+    public function all(): array { return $this-&gt;types; }
+
+    public function options(): array
+    {
+        $out = [];
+        foreach ($this-&gt;types as $slug =&gt; $type) {
+            $out[$slug] = $type-&gt;label();
+        }
+        return $out;
+    }
+}</pre>
+
+<p>Tiny class. Four methods:</p>
+<ul>
+  <li><code>register</code> — add a type. Returns <code>$this</code> for chaining.</li>
+  <li><code>for($slug)</code> — look up; throw if missing (fail fast).</li>
+  <li><code>all()</code> — return the whole map (used to build the validation rule dynamically).</li>
+  <li><code>options()</code> — return slug→label for dropdowns.</li>
+</ul>
+
+<h3>How it gets populated — the service provider</h3>
+<pre>class QuestionTypeServiceProvider extends ServiceProvider
+{
+    public function register(): void
+    {
+        $this-&gt;app-&gt;singleton(QuestionTypeRegistry::class, function () {
+            return (new QuestionTypeRegistry)
+                -&gt;register(new BinaryType)
+                -&gt;register(new SingleChoiceType)
+                -&gt;register(new MultipleChoiceType)
+                -&gt;register(new NumberType)
+                -&gt;register(new TextType);
+        });
+    }
+}</pre>
+
+<div class="callout callout-success">
+  <div class="callout-title">What this means</div>
+  <p>"Hey Laravel, when anyone asks for a <code>QuestionTypeRegistry</code>, run this closure once, build a registry pre-populated with all 5 types, and cache it for the rest of the request." That's what <code>singleton</code> does.</p>
+</div>
+
+<h3>The 5 types — what each does</h3>
+<table>
+  <tr><th>Type</th><th>config holds</th><th>Options table</th><th>Scoring</th></tr>
+  <tr><td>BinaryType</td><td><code>{correct: 'yes'|'no'}</code></td><td>None (deletes existing)</td><td>Match correct answer → full marks</td></tr>
+  <tr><td>SingleChoiceType</td><td><code>{}</code> (empty)</td><td>One row per option, one marked correct</td><td>Pick correct option → full marks</td></tr>
+  <tr><td>MultipleChoiceType</td><td><code>{scoring: 'strict'|'partial'}</code></td><td>One row per option, multiple may be correct</td><td>Strict (all-or-nothing) or partial credit</td></tr>
+  <tr><td>NumberType</td><td><code>{expected, tolerance}</code></td><td>None</td><td><code>abs(given - expected) ≤ tolerance</code> → full marks</td></tr>
+  <tr><td>TextType</td><td><code>{expected, match}</code></td><td>None</td><td>Match modes: exact, ci, contains, regex</td></tr>
+</table>
+
+<h3>How adding a new type would work</h3>
+<ol>
+  <li>Create <code>app/QuestionTypes/Types/DatePickerType.php</code> implementing the interface.</li>
+  <li>Add one line in <code>QuestionTypeServiceProvider</code>: <code>-&gt;register(new DatePickerType)</code>.</li>
+  <li>Create the 3 Blade partials it points to.</li>
+</ol>
+<p><strong>Zero changes</strong> to controllers. Validation auto-extends. Dropdowns auto-extend. That's the Open/Closed Principle.</p>
+
+<!-- ============================== 11. CONTAINER & DI ============================== -->
+<h1>11. The Service Container &amp; Dependency Injection</h1>
+
+<h3>What is the service container?</h3>
+<p>Laravel's <strong>service container</strong> is a giant PHP factory. You can ask it: "Give me an instance of class X." It will:</p>
+<ol>
+  <li>Look at the class's constructor.</li>
+  <li>For each parameter, recursively ask the container for that type.</li>
+  <li>Build the whole tree of dependencies and return the assembled object.</li>
+</ol>
+
+<h3>Why this matters here</h3>
+<p>Look at the controller:</p>
+<pre>public function __construct(private QuestionTypeRegistry $registry) {}</pre>
+<p>You never write <code>new QuestionController(new QuestionTypeRegistry())</code>. Laravel does it for you, every request. <strong>Decoupled and testable</strong>.</p>
+
+<h3>What is dependency injection?</h3>
+<p>Instead of a class building its own dependencies (<code>$this-&gt;db = new Database()</code>), they're <strong>passed in</strong>. The class doesn't care where they came from. In tests, you can pass mocks instead of real things.</p>
+
+<h3>Singleton vs bind</h3>
+<table>
+  <tr><th>Method</th><th>Behavior</th></tr>
+  <tr><td><code>$this-&gt;app-&gt;singleton(X, fn)</code></td><td>Run <code>fn</code> once per request, cache result. Same instance every time.</td></tr>
+  <tr><td><code>$this-&gt;app-&gt;bind(X, fn)</code></td><td>Run <code>fn</code> every time X is requested. Fresh instance each time.</td></tr>
+</table>
+<p>The registry is a singleton — no need to rebuild it five times in one request.</p>
+
+<!-- ============================== 12. FILE UPLOADS ============================== -->
+<h1>12. File Uploads &amp; Storage</h1>
+
+<h3>The upload flow</h3>
+<pre>$imagePath = $request-&gt;hasFile('image')
+    ? $request-&gt;file('image')-&gt;store('questions', 'public')
+    : null;</pre>
+
+<ul>
+  <li><code>$request-&gt;hasFile('image')</code> — was a file uploaded under the <code>image</code> input name?</li>
+  <li><code>$request-&gt;file('image')</code> — get the <code>UploadedFile</code> object.</li>
+  <li><code>-&gt;store('questions', 'public')</code> — save it under the <code>questions/</code> folder on the <strong>public</strong> disk. Returns the relative path with a random filename.</li>
+</ul>
+
+<h3>What is "the public disk"?</h3>
+<p>Laravel's filesystem is configured with named "disks" (in <code>config/filesystems.php</code>). The <code>public</code> disk maps to <code>storage/app/public</code>, which is symlinked to <code>public/storage</code> via <code>php artisan storage:link</code>. This makes uploaded files accessible at URLs like <code>/storage/questions/abc123.jpg</code>.</p>
+
+<h3>Why store the path, not the file?</h3>
+<p>Files belong on disk. The DB just stores a string path so we know where to find them. Tiny rows, fast queries.</p>
+
+<h3>Cleanup</h3>
+<p>When updating or deleting, the controller manually removes old files via <code>Storage::disk('public')-&gt;delete($path)</code>. The DB doesn't track files, so we have to.</p>
+
+<!-- ============================== 13. VALIDATION ============================== -->
+<h1>13. Validation</h1>
+
+<pre>$data = $request-&gt;validate([
+    'title' =&gt; ['required', 'string', 'max:255'],
+    'description' =&gt; ['nullable', 'string'],
+]);</pre>
+
+<p><strong>How it works:</strong></p>
+<ol>
+  <li>You pass an array of rules.</li>
+  <li>If validation fails, Laravel <strong>auto-redirects back</strong> with errors and the user's input flashed to session. The view can show errors via <code>$errors</code>.</li>
+  <li>If validation passes, you get back an array of only the validated fields. Anything else the user sent is silently dropped.</li>
+</ol>
+
+<h3>Common rules used in this app</h3>
+<table>
+  <tr><th>Rule</th><th>Meaning</th></tr>
+  <tr><td>required</td><td>Field must be present and not empty</td></tr>
+  <tr><td>nullable</td><td>Field may be null/missing</td></tr>
+  <tr><td>string</td><td>Must be a string</td></tr>
+  <tr><td>integer</td><td>Must be an integer</td></tr>
+  <tr><td>min:1, max:255</td><td>Numeric/length bounds</td></tr>
+  <tr><td>url</td><td>Must be a valid URL</td></tr>
+  <tr><td>image</td><td>Must be an image (jpg/png/gif/etc.)</td></tr>
+  <tr><td>in:a,b,c</td><td>Must be one of the listed values</td></tr>
+</table>
+
+<!-- ============================== 14. VIEWS ============================== -->
+<h1>14. Views &amp; Blade</h1>
+
+<p>Blade is Laravel's templating engine. It looks like HTML with sprinkles of <code>{{ }}</code> and <code>@directives</code>.</p>
+
+<h3>The basics</h3>
+<table>
+  <tr><th>Syntax</th><th>What it does</th></tr>
+  <tr><td><code>{{ $name }}</code></td><td>Echo with HTML escaping (XSS-safe)</td></tr>
+  <tr><td><code>{!! $html !!}</code></td><td>Echo raw HTML (use carefully)</td></tr>
+  <tr><td><code>@foreach($items as $item)</code></td><td>Loop</td></tr>
+  <tr><td><code>@if(...) @endif</code></td><td>Conditional</td></tr>
+  <tr><td><code>@include('partials.foo')</code></td><td>Include another template</td></tr>
+  <tr><td><code>@extends('layouts.app')</code></td><td>Inherit a layout</td></tr>
+  <tr><td><code>@section('content')</code></td><td>Define a section in the layout</td></tr>
+</table>
+
+<h3>How types render type-specific UI</h3>
+<p>The view does this:</p>
+<pre>@include($registry-&gt;for($question-&gt;type)-&gt;inputView())</pre>
+<p>For a binary question that's <code>questions.input.binary</code>; for multiple choice it's <code>questions.input.multiple_choice</code>. <strong>Same view code works for any type</strong> — it just asks the type which partial to use.</p>
+
+<!-- ============================== 15. END-TO-END WALKTHROUGH ============================== -->
+<h1>15. The Complete Request Walkthrough</h1>
+
+<p>Let's trace one full user journey: a student submits a quiz attempt.</p>
+
+<h3>Setup</h3>
+<p>Quiz #5 has 3 questions: a binary, a multiple choice, and a number. Student starts the attempt, answers them, hits Submit.</p>
+
+<h3>Step 1: Browser sends the request</h3>
+<pre>POST /attempts/12/submit
+Content-Type: application/x-www-form-urlencoded
+Body: answers[1]=yes&amp;answers[2][]=4&amp;answers[2][]=5&amp;answers[3]=42</pre>
+
+<h3>Step 2: Laravel boots and routes</h3>
+<p>Router finds: <code>Route::post('attempts/{attempt}/submit', [AttemptController::class, 'submit'])</code>.</p>
+
+<h3>Step 3: Controller is built</h3>
+<p>Container sees <code>AttemptController</code> needs a <code>QuestionTypeRegistry</code>. It gets the cached singleton (already populated with 5 types).</p>
+
+<h3>Step 4: Route-model binding</h3>
+<p>Laravel sees <code>{attempt}</code> = "12" and the method signature is <code>Attempt $attempt</code>. It runs <code>Attempt::findOrFail(12)</code> and passes the model.</p>
+
+<h3>Step 5: Guard against double-submit</h3>
+<p><code>abort_if($attempt-&gt;isSubmitted(), 403, ...)</code> — if already submitted, return 403.</p>
+
+<h3>Step 6: Eager-load the data we need</h3>
+<p><code>$attempt-&gt;load('quiz.questions.options')</code> — three nested levels in one go.</p>
+
+<h3>Step 7: Loop and score</h3>
+<p>For each question:</p>
+<ul>
+  <li><strong>Question 1 (binary):</strong> <code>$type = registry-&gt;for('binary')</code>. Normalize: <code>['value' =&gt; 'yes']</code>. Evaluate against <code>config['correct']</code>. Save Answer with marks.</li>
+  <li><strong>Question 2 (MC):</strong> Normalize: <code>['option_ids' =&gt; [4, 5]]</code>. Evaluate (strict or partial). Save.</li>
+  <li><strong>Question 3 (number):</strong> Normalize: <code>['value' =&gt; 42.0]</code>. Evaluate against expected ± tolerance. Save.</li>
+</ul>
+
+<h3>Step 8: Update the attempt with totals</h3>
+<pre>$attempt-&gt;update([
+    'submitted_at' =&gt; now(),
+    'score' =&gt; $total,
+    'max_score' =&gt; $attempt-&gt;quiz-&gt;totalMarks(),
+]);</pre>
+
+<h3>Step 9: Redirect</h3>
+<p><code>return redirect()-&gt;route('attempts.show', $attempt);</code> — sends a 302 redirect to <code>/attempts/12</code>.</p>
+
+<h3>Step 10: Browser follows the redirect</h3>
+<p>New <code>GET /attempts/12</code> request → <code>show()</code> method → renders the result page with each question, the student's answer, and marks awarded. Done.</p>
+
+<!-- ============================== 16. GLOSSARY ============================== -->
+<h1>16. Glossary of Terms</h1>
+
+<table>
+  <tr><th>Term</th><th>Definition</th></tr>
+  <tr><td>Framework</td><td>Pre-written code that solves common web problems (routing, DB, etc.)</td></tr>
+  <tr><td>MVC</td><td>Model-View-Controller architectural pattern</td></tr>
+  <tr><td>ORM</td><td>Object-Relational Mapping — treat DB rows as objects</td></tr>
+  <tr><td>Eloquent</td><td>Laravel's ORM</td></tr>
+  <tr><td>Migration</td><td>Versioned PHP file that creates/changes DB schema</td></tr>
+  <tr><td>Model</td><td>PHP class representing a DB table</td></tr>
+  <tr><td>Controller</td><td>Class with methods that handle HTTP requests</td></tr>
+  <tr><td>Route</td><td>Mapping of URL+verb → controller method</td></tr>
+  <tr><td>Route-model binding</td><td>Auto-fetch model from URL parameter</td></tr>
+  <tr><td>Middleware</td><td>Layer that processes requests/responses (auth, CSRF, etc.)</td></tr>
+  <tr><td>Service Container</td><td>Laravel's IoC container — builds objects with dependencies</td></tr>
+  <tr><td>Service Provider</td><td>Bootstrap class that registers things in the container</td></tr>
+  <tr><td>Dependency Injection</td><td>Pass dependencies in instead of building them inside</td></tr>
+  <tr><td>Facade</td><td>Static-like accessor for a container service (e.g., <code>Storage::</code>)</td></tr>
+  <tr><td>Blade</td><td>Laravel's templating engine for views</td></tr>
+  <tr><td>Eager loading</td><td>Load relationships up-front to avoid N+1</td></tr>
+  <tr><td>N+1 query problem</td><td>1 query for parents, N more queries for each child relationship</td></tr>
+  <tr><td>Mass assignment</td><td>Setting many model attributes from an array; controlled by <code>$fillable</code></td></tr>
+  <tr><td>Cast</td><td>Auto-conversion of DB values to PHP types (e.g. JSON → array)</td></tr>
+  <tr><td>Migration</td><td>Code-based DB schema versioning</td></tr>
+  <tr><td>Foreign key</td><td>DB constraint linking rows across tables</td></tr>
+  <tr><td>Cascade delete</td><td>Auto-delete child rows when parent is deleted</td></tr>
+  <tr><td>Strategy Pattern</td><td>Encapsulate interchangeable algorithms behind a common interface</td></tr>
+  <tr><td>Registry</td><td>A lookup map from key → object/class</td></tr>
+  <tr><td>Singleton</td><td>One instance, reused</td></tr>
+  <tr><td>Open/Closed Principle</td><td>Open for extension, closed for modification</td></tr>
+  <tr><td>POST/Redirect/GET</td><td>After form POST, redirect to a GET to prevent re-submit on refresh</td></tr>
+  <tr><td>CSRF token</td><td>Cross-Site Request Forgery protection token Laravel adds to forms</td></tr>
+  <tr><td>Flash session</td><td>Data stored in session for one request only (e.g. success messages)</td></tr>
+  <tr><td>Artisan</td><td>Laravel's CLI tool</td></tr>
+</table>
+
+<!-- ============================== 17. INTERVIEW QUESTIONS ============================== -->
+<h1>17. Interview Questions with Answers</h1>
+
+<h2>Project &amp; Architecture</h2>
+
+<div class="qa-box">
+  <div class="qa-q">Walk me through this project.</div>
+  <div class="qa-a">It's a dynamic quiz app in Laravel. Admins create quizzes and add questions of 5 different types — binary, single choice, multiple choice, number, text. Students take quizzes and get auto-graded. The interesting design is the <strong>strategy pattern via a type registry</strong>: each question type is its own class implementing a common interface; the controller never has an if/else over types. All questions live in one table with a JSON config column for type-specific settings.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Why didn't you use polymorphic models or one table per question type?</div>
+  <div class="qa-a">Polymorphic models work but add complexity (morphTo, morphMany, two columns per relation). Separate tables per type would mean joining 5 tables and complicate the editor and scoring. <strong>Single table with a JSON config column</strong> is the simplest design that supports unbounded types. The trade-off is you can't easily query into JSON in vanilla SQL, but for read-with-the-row settings, it's fine.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">How would you add a new question type tomorrow?</div>
+  <div class="qa-a">Three steps: (1) Create a class implementing <code>QuestionType</code> with the 9 interface methods. (2) Add one line in <code>QuestionTypeServiceProvider</code> to register it. (3) Create the 3 Blade partials for editor / input / review. <strong>No controller changes</strong>. Validation auto-extends because the rule is built from the registry.</div>
+</div>
+
+<h2>Laravel Basics</h2>
+
+<div class="qa-box">
+  <div class="qa-q">What happens between the URL and the page?</div>
+  <div class="qa-a">Browser sends HTTP request → web server passes to <code>public/index.php</code> → Laravel boots, registers service providers → middleware runs → router matches the route → controller is built (DI) → controller method runs (talks to DB, validates) → returns a view or redirect → response goes back through middleware → browser renders.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What is MVC?</div>
+  <div class="qa-a">Model-View-Controller. Model = data + business rules (Eloquent models). View = presentation (Blade templates). Controller = traffic cop that takes requests, asks the model, sends data to the view. Separation of concerns.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What does <code>Route::resource</code> do?</div>
+  <div class="qa-a">It registers 7 RESTful routes for a resource: index, create, store, show, edit, update, destroy. Saves writing them by hand and enforces convention.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What is route-model binding?</div>
+  <div class="qa-a">When a URL has a parameter like <code>{quiz}</code> and the controller method declares <code>Quiz $quiz</code>, Laravel automatically runs <code>Quiz::findOrFail(...)</code> with the URL value and passes the model. If not found, it 404s. You don't write the lookup yourself.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What does <code>QuestionController::class</code> mean?</div>
+  <div class="qa-a">It's a PHP language construct that returns the fully-qualified class name as a string. Used instead of typing the string manually so the IDE can autocomplete and refactor it. It's NOT creating an instance.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What does <code>-&gt;name('something')</code> do on a route?</div>
+  <div class="qa-a">Gives the route a label so you can reference it via <code>route('something', $params)</code> elsewhere instead of hardcoding the URL. If the URL ever changes, every reference still works.</div>
+</div>
+
+<h2>Eloquent &amp; ORM</h2>
+
+<div class="qa-box">
+  <div class="qa-q">What is an ORM and why use one?</div>
+  <div class="qa-a">Object-Relational Mapping. It lets you treat DB rows as PHP objects instead of writing raw SQL. Cleaner code, less repetition, automatic SQL generation, type safety, easy relationships, protection against SQL injection by default.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What's the N+1 problem and how do you solve it?</div>
+  <div class="qa-a">You fetch N parent rows in 1 query, then loop and access a relationship on each — triggering N more queries. For 100 quizzes, that's 101 SQL hits. Solve with eager loading: <code>Quiz::with('questions')-&gt;get()</code> uses just 2 queries total.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What does <code>withCount</code> do?</div>
+  <div class="qa-a">Adds a count of related rows as a new property without loading them. <code>Quiz::withCount('questions')</code> attaches <code>questions_count</code> via a single SQL subquery. Efficient.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What is <code>$fillable</code>?</div>
+  <div class="qa-a">An allow-list of fields that can be mass-assigned via <code>create()</code> or <code>update()</code>. Without it, an attacker could POST extra fields like <code>is_admin=1</code> and Eloquent would happily save them. <strong>Mass assignment protection</strong>.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What are casts on a model?</div>
+  <div class="qa-a">Auto-convert DB values to PHP types. <code>'config' =&gt; 'array'</code> means the JSON column is automatically decoded to a PHP array on read and encoded on write. <code>'is_correct' =&gt; 'boolean'</code> turns the DB's <code>0</code>/<code>1</code> into <code>true</code>/<code>false</code>.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What's the difference between <code>hasMany</code> and <code>belongsTo</code>?</div>
+  <div class="qa-a"><code>hasMany</code> is the parent side (Quiz has many Questions). <code>belongsTo</code> is the child side (Question belongs to Quiz). The foreign key (<code>quiz_id</code>) lives on the child table.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What does <code>$quiz-&gt;questions()-&gt;create([...])</code> do that <code>Question::create([...])</code> wouldn't?</div>
+  <div class="qa-a">It auto-fills <code>quiz_id</code> from <code>$quiz</code>. The relationship knows the foreign key, so you don't have to set it manually.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">When would you use <code>load</code> vs <code>loadMissing</code> vs <code>fresh</code>?</div>
+  <div class="qa-a"><code>load</code> always queries (use after creation). <code>loadMissing</code> only queries if not already loaded (avoids redundancy). <code>fresh</code> returns a new instance freshly fetched from DB (use after data may have changed under you).</div>
+</div>
+
+<h2>The Type System</h2>
+
+<div class="qa-box">
+  <div class="qa-q">Why a registry instead of a switch statement?</div>
+  <div class="qa-a">A switch couples the controller to every concrete type. Adding a type means editing the switch in every method that uses it. With a registry, the controller depends only on the abstraction. Adding a type is a one-class, one-line change. Open/Closed Principle.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What design pattern is this?</div>
+  <div class="qa-a">It's the <strong>Strategy Pattern</strong> — interchangeable algorithms behind a common interface. The registry is a <strong>Service Locator</strong> for those strategies. The composition is a textbook way to eliminate type-based conditionals.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Where does the registry get populated?</div>
+  <div class="qa-a">In <code>QuestionTypeServiceProvider::register()</code>. It calls <code>$this-&gt;app-&gt;singleton</code> to bind the registry as a singleton, with a closure that creates the registry and chains <code>register()</code> calls for all 5 types. Runs once during boot.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Why is the registry a singleton?</div>
+  <div class="qa-a">No reason to rebuild it multiple times in one request — the type instances are stateless. A singleton means one instance, shared by everyone who asks. Saves work and memory.</div>
+</div>
+
+<h2>Service Container &amp; DI</h2>
+
+<div class="qa-box">
+  <div class="qa-q">What is the service container?</div>
+  <div class="qa-a">Laravel's IoC (inversion of control) container. It builds objects and injects dependencies. You ask it for a class; it inspects the constructor, resolves each parameter recursively, and hands you a fully built instance.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What is dependency injection?</div>
+  <div class="qa-a">Passing dependencies in via constructor (or method) instead of building them inside the class. Decouples the class from concrete implementations and makes testing easy — pass mocks in tests.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">How is the registry injected into the controller?</div>
+  <div class="qa-a">The constructor declares <code>private QuestionTypeRegistry $registry</code>. When Laravel needs to call the controller, the container builds it, sees the parameter type, looks up the singleton binding, and passes the registry instance.</div>
+</div>
+
+<h2>HTTP &amp; Forms</h2>
+
+<div class="qa-box">
+  <div class="qa-q">What is the POST/Redirect/GET pattern?</div>
+  <div class="qa-a">After a form POST that mutates data, return a redirect to a GET URL instead of rendering directly. This way, refreshing the resulting page doesn't re-submit the form. Standard web hygiene.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What does <code>-&gt;with('status', 'message')</code> do?</div>
+  <div class="qa-a">Flashes data to the session for the next request only. The view on the redirected-to page can read <code>session('status')</code> to show a one-time success message.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What is CSRF and how does Laravel handle it?</div>
+  <div class="qa-a">Cross-Site Request Forgery. An attacker tricks a logged-in user into submitting a request. Laravel adds a hidden token to every form (via <code>@csrf</code>) and verifies it on POST/PUT/DELETE via middleware. No matching token → 419 error.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">How does file upload work in Laravel?</div>
+  <div class="qa-a">The form needs <code>enctype="multipart/form-data"</code>. The file arrives as an <code>UploadedFile</code>. <code>$request-&gt;file('image')-&gt;store('folder', 'public')</code> saves it to the public disk and returns the relative path, which you store in the DB.</div>
+</div>
+
+<h2>Validation</h2>
+
+<div class="qa-box">
+  <div class="qa-q">How does <code>$request-&gt;validate(...)</code> work?</div>
+  <div class="qa-a">If validation fails, Laravel auto-redirects back with errors and old input flashed to session. If it passes, you get an array of only the validated fields. Anything else is dropped.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Why generate the <code>type</code> validation rule from the registry?</div>
+  <div class="qa-a">So adding a new type doesn't require updating the validation rule. The rule becomes <code>in:binary,single_choice,multiple_choice,number,text</code> dynamically. One source of truth.</div>
+</div>
+
+<h2>Database</h2>
+
+<div class="qa-box">
+  <div class="qa-q">What is a migration?</div>
+  <div class="qa-a">A versioned PHP file that defines a schema change. <code>php artisan migrate</code> applies them in order. Lets every developer and server have an identical schema, with rollback support.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What does <code>foreignId('quiz_id')-&gt;constrained()-&gt;cascadeOnDelete()</code> do?</div>
+  <div class="qa-a">Creates an unsigned bigint <code>quiz_id</code>, adds a foreign key constraint pointing to <code>quizzes.id</code>, and tells the DB to auto-delete this row when the referenced quiz is deleted.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Why a composite index on <code>(quiz_id, position)</code>?</div>
+  <div class="qa-a">The most common query is "questions for this quiz, ordered by position". A composite index makes both the WHERE and ORDER BY use the index, giving O(log n) lookup instead of full scan + sort.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">Why store <code>config</code> as JSON instead of separate columns?</div>
+  <div class="qa-a">Different question types need different settings. A binary needs <code>{correct}</code>; a number needs <code>{expected, tolerance}</code>; a text needs <code>{expected, match}</code>. Adding columns for every possible setting bloats the schema. JSON gives schema flexibility per type while keeping one table.</div>
+</div>
+
+<h2>Scoring &amp; Logic</h2>
+
+<div class="qa-box">
+  <div class="qa-q">How does multiple-choice scoring work?</div>
+  <div class="qa-a">Two modes via <code>config['scoring']</code>: <strong>strict</strong> means the picked set must equal the correct set exactly — full marks or zero. <strong>partial</strong> awards <code>(right − wrong) / total</code> of the marks, floored at 0.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">How does number scoring work?</div>
+  <div class="qa-a"><code>abs(given − expected) ≤ tolerance</code> → full marks; else zero. The tolerance is per-question, set by the admin.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What match modes does text support?</div>
+  <div class="qa-a">Four: <code>exact</code> (case-sensitive equality), <code>ci</code> (case-insensitive), <code>contains</code> (substring, case-insensitive), <code>regex</code> (regex match). Configurable per question.</div>
+</div>
+
+<h2>Improvements &amp; Trade-offs</h2>
+
+<div class="qa-box">
+  <div class="qa-q">What would you improve if you had more time?</div>
+  <div class="qa-a">(1) Wrap <code>store</code> and <code>submit</code> in DB transactions so partial failures roll back. (2) Add authorization (Policies) — currently anyone with a URL can edit. (3) Add per-type form-request validation classes instead of doing common validation in the controller. (4) Add tests for each type's <code>evaluate</code> method. (5) Add a <code>QuestionType</code> abstract base class to share common boilerplate.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What if scoring becomes more complex (e.g. partial number credit, fuzzy text)?</div>
+  <div class="qa-a">The architecture handles it: extend the type's <code>evaluate</code> method, add fields to <code>buildConfig</code>, update the editor partial. Nothing else changes.</div>
+</div>
+
+<div class="qa-box">
+  <div class="qa-q">What if a question type needs custom validation rules?</div>
+  <div class="qa-a">Add a <code>validationRules(): array</code> method to the <code>QuestionType</code> interface. Each type returns its own rules. The controller merges them with the base rules. Single Responsibility maintained.</div>
+</div>
+
+<!-- ============================== 18. CHEAT SHEET ============================== -->
+<h1>18. Final Cheat Sheet &amp; Talking Points</h1>
+
+<h3>The 60-second project pitch</h3>
+<div class="callout callout-success">
+  <p>"It's a dynamic quiz system in Laravel with five question types — binary, single choice, multiple choice, number with tolerance, and text with match modes. The key design decision was using the <strong>strategy pattern</strong>: each question type is its own class implementing a common interface, registered in a service-container singleton. The controller looks up the right handler by slug and delegates — there's no <code>if/else</code> over types anywhere. All questions live in one table with a JSON config column for type-specific settings. Adding a new question type tomorrow is a one-class, one-line change with zero modifications to existing code. That's the Open/Closed Principle made concrete."</p>
+</div>
+
+<h3>Five soundbites to memorize</h3>
+<ol>
+  <li><strong>"The registry is a singleton dictionary mapping slugs to type handlers."</strong></li>
+  <li><strong>"The controller programs against the QuestionType interface, never against concrete classes."</strong></li>
+  <li><strong>"Validation rules and dropdown options are generated from the registry, so new types auto-extend the system."</strong></li>
+  <li><strong>"Single-table polymorphism with a JSON config column gives flexibility without a schema explosion."</strong></li>
+  <li><strong>"Eager loading via <code>load('questions.options')</code> avoids the N+1 problem in views."</strong></li>
+</ol>
+
+<h3>If you only remember three things</h3>
+<table>
+  <tr><th>#</th><th>Concept</th><th>Why it matters</th></tr>
+  <tr><td>1</td><td>Strategy + Registry pattern</td><td>Eliminates type-based <code>if/else</code>, enables open/closed extension</td></tr>
+  <tr><td>2</td><td>Eloquent relationships + eager loading</td><td>Clean code, avoids N+1, auto-handles foreign keys</td></tr>
+  <tr><td>3</td><td>Dependency injection via service container</td><td>Decoupling, testability, no manual <code>new</code></td></tr>
+</table>
+
+<h3>If they ask "What did you learn?"</h3>
+<p>"Building this taught me to push complexity into focused classes and let the framework's container wire them up. Once the strategy interface was solid, the controller stayed boring — and that's exactly what I want from a controller. The 'magic' is in the design, not in clever code."</p>
+
+<h3>The body language tip</h3>
+<p>When they show you a piece of code and ask "explain this", <strong>don't immediately speak</strong>. Read it for 5 seconds. Then start with the <em>why</em>: "This is the controller method that handles X. The interesting bit here is..." That framing instantly sounds senior.</p>
+
+<hr>
+
+<div class="callout callout-success">
+  <div class="callout-title">You've Got This</div>
+  <p>Go in calm. The architecture genuinely is good — strategy pattern, single-table polymorphism, eager loading, dependency injection. Speak to the <em>why</em>, not just the what, and you'll do well. Good luck!</p>
+</div>
+
+</body>
+</html>

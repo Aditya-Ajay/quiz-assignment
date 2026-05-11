@@ -35,7 +35,13 @@
 <section class="mb-8">
     <div class="flex items-center justify-between mb-3">
         <h2 class="text-lg font-semibold text-slate-900">Questions</h2>
-        <span class="text-sm text-slate-500">Total marks: {{ $quiz->totalMarks() }}</span>
+        <div class="flex items-center gap-3">
+            <span class="text-sm text-slate-500">Total marks: {{ $quiz->totalMarks() }}</span>
+            <button onclick="document.getElementById('ai-modal').classList.remove('hidden')"
+                    class="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700">
+                ✨ Generate with AI
+            </button>
+        </div>
     </div>
 
     @if ($quiz->questions->isEmpty())
@@ -118,4 +124,95 @@
         })();
     </script>
 </section>
+
+<!-- AI Generation Modal -->
+<div id="ai-modal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg shadow-xl max-w-lg w-full mx-4">
+        <div class="flex items-center justify-between p-6 border-b border-slate-200">
+            <h3 class="text-lg font-semibold text-slate-900">✨ Generate Questions with AI</h3>
+            <button onclick="document.getElementById('ai-modal').classList.add('hidden')"
+                    class="text-slate-400 hover:text-slate-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        
+        <form method="POST" action="{{ route('quizzes.generate', $quiz) }}" class="p-6 space-y-4" id="ai-generate-form">
+            @csrf
+            
+            <div id="generation-progress" class="hidden">
+                <div class="flex items-center gap-3 p-4 bg-indigo-50 rounded-lg">
+                    <svg class="animate-spin h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <div>
+                        <div class="text-sm font-medium text-indigo-900">Generating questions...</div>
+                        <div class="text-xs text-indigo-700">This may take 10-15 seconds</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="generation-form">
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Topic</label>
+                <input type="text" name="topic" required placeholder="e.g., Wozku's advocacy-led growth model"
+                       class="w-full rounded-md border border-slate-300 px-3 py-2">
+                <p class="text-xs text-slate-500 mt-1">Questions will be generated from Wozku's knowledge base</p>
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Number of questions</label>
+                <input type="number" name="count" value="5" min="1" max="20" required
+                       class="w-full rounded-md border border-slate-300 px-3 py-2">
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-2">Question types</label>
+                <div class="space-y-2">
+                    <label class="flex items-center gap-2">
+                        <input type="checkbox" name="types[]" value="single_choice" checked class="rounded">
+                        <span class="text-sm text-slate-700">Single Choice</span>
+                    </label>
+                    <label class="flex items-center gap-2">
+                        <input type="checkbox" name="types[]" value="multiple_choice" checked class="rounded">
+                        <span class="text-sm text-slate-700">Multiple Choice</span>
+                    </label>
+                    <label class="flex items-center gap-2">
+                        <input type="checkbox" name="types[]" value="text" checked class="rounded">
+                        <span class="text-sm text-slate-700">Text</span>
+                    </label>
+                </div>
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-slate-700 mb-1">Difficulty</label>
+                <select name="difficulty" required class="w-full rounded-md border border-slate-300 px-3 py-2">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            
+            <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+                <button type="submit" class="rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white hover:bg-indigo-700">
+                    Generate Questions
+                </button>
+                <button type="button" onclick="document.getElementById('ai-modal').classList.add('hidden')"
+                        class="rounded-md border border-slate-300 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">
+                    Cancel
+                </button>
+            </div>
+            </div>
+        </form>
+        
+        <script>
+            document.getElementById('ai-generate-form').addEventListener('submit', function() {
+                document.getElementById('generation-form').classList.add('hidden');
+                document.getElementById('generation-progress').classList.remove('hidden');
+            });
+        </script>
+    </div>
+</div>
 @endsection

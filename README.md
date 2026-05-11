@@ -53,8 +53,9 @@ Then re-run `php artisan migrate:fresh --seed`.
 1. **Browse quizzes** at `/quizzes`.
 2. **Create a quiz** — title + description.
 3. **Add questions** from the quiz edit page. The editor form morphs based on the selected type.
-4. **Take a quiz** — click *Take Quiz* on any quiz with at least one question. A fresh `Attempt` row is created on page load.
-5. **Submit** — the server evaluates every answer against its question's rules and redirects to a result page with per-question breakdown and total score.
+4. **Generate with AI** (Wozku Mode) — click *✨ Generate with AI* to create questions from Wozku's knowledge base using RAG. Requires Python service setup. See [WOZKU_MODE.md](./WOZKU_MODE.md).
+5. **Take a quiz** — click *Take Quiz* on any quiz with at least one question. A fresh `Attempt` row is created on page load.
+6. **Submit** — the server evaluates every answer against its question's rules and redirects to a result page with per-question breakdown and total score.
 
 ## Question types
 

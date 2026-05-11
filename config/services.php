@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'openai' => [
+        'api_key' => env('OPENAI_API_KEY'),
+    ],
+
+    'rag' => [
+        'url' => env('RAG_SERVICE_URL', 'http://localhost:8001'),
+    ],
+
 ];
