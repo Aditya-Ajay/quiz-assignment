@@ -107,6 +107,44 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md#extending-with-a-new-type).
 
 ## Deployment
 
+### Laravel Application (PHP)
+
 The live demo runs on an **AWS Lightsail LAMP (PHP 8) Bitnami** instance in `ap-south-1`, `nano_3_1`.
+
+- **URL:** http://13.233.75.72/quizzes
+- **Instance:** quiz-assignment
+- **Region:** ap-south-1
+- **Database:** SQLite
+
+### Python RAG Service
+
+**Repository:** https://github.com/Aditya-Ajay/quiz-rag-service
+
+Deploy on AWS EC2/Lightsail instance:
+
+```bash
+# SSH into instance
+git clone https://github.com/Aditya-Ajay/quiz-rag-service.git
+cd quiz-rag-service
+python3.12 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+# Add OPENAI_API_KEY to .env
+echo "OPENAI_API_KEY=sk-..." > .env
+
+# Ingest Wozku content
+curl -X POST http://localhost:8001/ingest \
+  -H "Content-Type: application/json" \
+  -d '{"urls": ["https://wozku.com/", "https://wozku.com/about-us"]}'
+
+# Run with systemd/supervisor
+uvicorn main:app --host 0.0.0.0 --port 8001
+```
+
+Update Laravel `.env` with RAG service URL:
+```env
+RAG_SERVICE_URL=http://<rag-instance-ip>:8001
+```
 
 
